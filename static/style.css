@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+
+body{
+
+    background:
+    linear-gradient(
+        135deg,
+        #e3f2fd,
+        #eef7ff,
+        #ffffff
+    );
+
+    min-height:100vh;
+
+    padding:40px;
+
+}
+
+
+.container{
+
+    width:95%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+
+header{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+
+header h1{
+
+    font-size:42px;
+
+    color:#0f172a;
+
+    margin-bottom:15px;
+
+}
+
+
+header p{
+
+    color:#64748b;
+
+    font-size:18px;
+
+}
+
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+}
+
+
+.card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.08);
+
+}
+
+
+.card h2{
+
+    margin-bottom:25px;
+
+    color:#2563eb;
+
+    font-size:25px;
+
+}
+
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:
+
+    repeat(auto-fit,minmax(270px,1fr));
+
+    gap:22px;
+
+}
+
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+label{
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+    color:#334155;
+
+}
+
+
+input,
+select{
+
+    padding:13px;
+
+    border-radius:10px;
+
+    border:1px solid #d4d4d8;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    background:white;
+
+}
+
+
+input:hover,
+select:hover{
+
+    border-color:#3b82f6;
+
+}
+
+
+input:focus,
+select:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:
+
+    0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+
+button{
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+
+    0 12px 20px rgba(37,99,235,.35);
+
+}
+
+
+button:active{
+
+    transform:scale(.98);
+
+}
+
+
+.result-card{
+
+    margin-top:35px;
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:
+
+    0 10px 25px rgba(0,0,0,.08);
+
+    display:none;
+
+}
+
+
+.result-card h2{
+
+    margin-bottom:20px;
+
+    color:#0f172a;
+
+}
+
+
+#predictionText{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+
+.progress-container{
+
+    width:100%;
+
+    height:24px;
+
+    background:#e2e8f0;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    margin-bottom:20px;
+
+}
+
+
+.progress-bar{
+
+    height:100%;
+
+    width:0%;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #22c55e,
+        #16a34a
+    );
+
+    transition:1s;
+
+}
+
+
+.probability-text{
+
+    font-size:18px;
+
+    color:#475569;
+
+}
+
+
+@media(max-width:900px){
+
+    body{
+
+        padding:20px;
+
+    }
+
+    header h1{
+
+        font-size:32px;
+
+    }
+
+    .card{
+
+        padding:22px;
+
+    }
+
+}
