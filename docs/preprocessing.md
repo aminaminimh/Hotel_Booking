@@ -1,10 +1,6 @@
-# Data Preprocessing
-
-## Overview
+# Overview
 
 The quality of a Machine Learning model highly depends on the quality of the input data. This project applies several preprocessing techniques to clean the dataset and prepare it for training.
-
----
 
 # Pipeline
 
@@ -27,8 +23,6 @@ One-Hot Encoding
 Processed Dataset
 ```
 
----
-
 # 1. Removing Unnecessary Features
 
 The following features were removed before training:
@@ -40,8 +34,6 @@ The following features were removed before training:
 | reservation_status | Data leakage (contains target information) |
 | reservation_status_date | Available only after booking outcome |
 
----
-
 # 2. Missing Value Handling
 
 Different strategies were selected depending on the feature type.
@@ -50,23 +42,17 @@ Different strategies were selected depending on the feature type.
 
 Method:
 
-```
-Most Frequent Value
-```
+`Most Frequent Value`
 
 Reason:
 
 Country is a categorical feature and using the most common country preserves the existing data distribution.
 
----
-
 ## Children
 
 Method:
 
-```
-Median Imputation
-```
+`Median Imputation`
 
 Reason:
 
@@ -103,15 +89,11 @@ Benefits
 - Better generalization
 - Reduced memory usage
 
----
-
 # 4. Categorical Encoding
 
-Categorical variables are transformed using
+Categorical variables are transformed using:
 
-```
-OneHotEncoder
-```
+`OneHotEncoder`
 
 Parameters
 
@@ -120,8 +102,6 @@ handle_unknown="ignore"
 ```
 
 This allows the application to predict unseen categories during inference.
-
----
 
 # Saved Objects
 
