@@ -1,19 +1,16 @@
-# Model Training
-
-## Overview
+# Overview
 
 The goal of this project is to predict whether a hotel booking will be cancelled.
 
-Target variable
+Target variable:
+
+`is_canceled`
 
 ```
-is_canceled
+0 → Not Cancelled
+
+1 → Cancelled
 ```
-
-- 0 → Not Cancelled
-- 1 → Cancelled
-
----
 
 # Training Pipeline
 
@@ -39,8 +36,6 @@ Evaluation
 Save Model
 ```
 
----
-
 # Train/Test Split
 
 The dataset is divided into
@@ -58,13 +53,9 @@ Random State
 
 Stratified sampling is used to preserve class distribution.
 
----
-
 # Machine Learning Algorithm
 
-```
-XGBoost Classifier
-```
+`XGBoost Classifier`
 
 Reasons for choosing XGBoost
 
@@ -73,8 +64,6 @@ Reasons for choosing XGBoost
 - Robust against noisy features
 - Fast inference
 - Supports feature importance analysis
-
----
 
 # Hyperparameter Tuning
 
@@ -90,18 +79,16 @@ Typical parameters include
 
 The best performing model is saved for deployment.
 
----
-
 # Evaluation Metrics
 
-The model is evaluated using
+The model is evaluated using:
 
 - Accuracy
 - Precision
 - Recall
 - F1-score
 
-Current Performance
+Current Performance:
 
 | Metric | Value |
 |---------|------:|
@@ -110,17 +97,13 @@ Current Performance
 | Recall | 92% |
 | F1-score | 90% |
 
----
-
 # Saved Model
 
-The trained model is exported using
+The trained model is exported using:
 
-```
-Joblib
-```
+`Joblib`
 
-Generated files
+Generated files:
 
 ```
 xgb_model.pkl
