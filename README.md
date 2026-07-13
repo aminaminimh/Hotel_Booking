@@ -1,138 +1,21 @@
-# 🏨 Hotel Booking Cancellation Prediction
+# Hotel Booking Cancellation Prediction
+Hotel reservation cancellations are a major challenge for the hospitality industry. Guests often book rooms weeks or months in advance and may cancel their reservations before the check-in date. These cancellations can lead to revenue loss, inefficient room allocation, and inaccurate demand forecasting.
 
-A Machine Learning web application that predicts whether a hotel reservation is likely to be cancelled using an XGBoost classifier.
+This project uses Machine Learning to predict the probability of a reservation being cancelled based on booking information available at the time of reservation, such as lead time, customer type, market segment, previous booking history, room type, and other reservation attributes.
 
-The project includes a complete Machine Learning pipeline from data preprocessing to model deployment through a FastAPI backend and an interactive web interface.
-
----
+The prediction can help hotel managers identify high-risk bookings, improve overbooking strategies, optimize room inventory, and support data-driven decision making before the cancellation actually occurs.
 
 
-# 🚀 Features
+# Features
 
 - Data Cleaning
-- Missing Value Handling
-- Feature Engineering
-- Country Cardinality Reduction
-- One-Hot Encoding
-- Hyperparameter Tuning
+- Data Analysis
 - XGBoost Classification
 - Model Persistence using Joblib
 - FastAPI REST API
-- Interactive HTML/CSS/JavaScript Frontend
 
----
 
-# 📊 Dataset
-
-**Dataset Name**
-
-Hotel Booking Demand Dataset
-
-**Source**
-
-https://www.kaggle.com/datasets/jessemostipak/hotel-booking-demand
-
-### Dataset Information
-
-- 119,390 hotel bookings
-- Binary Classification
-- 30+ original features
-- Real-world reservation data
-
-Target Variable
-
-```
-is_canceled
-```
-
-- 0 → Booking Not Cancelled
-- 1 → Booking Cancelled
-
----
-
-# ⚙️ Machine Learning Pipeline
-
-```
-Raw Dataset
-      │
-      ▼
-Data Cleaning
-      │
-      ▼
-Missing Value Imputation
-      │
-      ▼
-Country Cardinality Reduction
-      │
-      ▼
-One-Hot Encoding
-      │
-      ▼
-Train/Test Split
-      │
-      ▼
-Hyperparameter Tuning
-      │
-      ▼
-XGBoost Training
-      │
-      ▼
-Save Model
-      │
-      ▼
-FastAPI Backend
-      │
-      ▼
-Web Prediction
-```
-
----
-
-# 📂 Project Structure
-
-```
-Hotel_Booking/
-│
-├── README.md
-├── requirements.txt
-│
-│
-├── data/
-│   └── hotel_bookings.csv
-│
-├── docs/
-│   ├── preprocessing.md
-│   ├── training.md
-│   ├── api.md
-│   └── deployment.md
-│
-├── images/
-│
-├── models/
-│   ├── xgb_model.pkl
-│   ├── encoder.pkl
-│   ├── country_imputer.pkl
-│   ├── children_imputer.pkl
-│   └── top_countries.pkl
-│
-├── src/
-│   ├── preprocessing.py
-│   ├── train.py
-│   ├── predict.py
-│   ├── app.py
-│   └── __init__.py
-│
-├── templates/
-│   └── index.html
-│
-└── static/
-    ├── style.css
-    └── script.js
-```
-
----
-
-# 🧹 Data Preprocessing
+# Data Preprocessing
 
 The preprocessing pipeline consists of the following steps:
 
@@ -159,28 +42,24 @@ Missing Values:
 Country encoding:
 
 ```
-Top 10 Countries
+ Top 10 Countries
 
-↓
+        ↓
 
 All Remaining Countries
 
-↓
+        ↓
 
-Other
+      Other
 ```
 
----
-
-# 🤖 Machine Learning Model
+#  Machine Learning Model
 
 Algorithm:
 
-```
-XGBoost Classifier
-```
+`XGBoost Classifier`
 
-Why XGBoost?
+Why?
 
 - High Accuracy
 - Handles mixed features
@@ -189,49 +68,49 @@ Why XGBoost?
 
 Hyperparameter tuning was applied to improve the model performance.
 
----
+# Model Performance
 
-# 📈 Model Performance
+The XGBoost classifier achieved an overall accuracy of **87%** on the test set.
 
-| Metric | Score |
-|---------|------:|
-| Accuracy | **87%** |
-| Precision | **88%** |
-| Recall | **92%** |
-| F1 Score | **90%** |
+The model performs particularly well in identifying reservations that are unlikely to be cancelled, while maintaining strong performance in detecting actual cancellations. This balance makes the model suitable for supporting operational decisions, where minimizing incorrect cancellation predictions is important for effective hotel management.
 
-Classification Report
+Classification Report:
 
-```
-              precision    recall    f1-score
+|              |precision  |  recall  |  f1-score|
+|--------------|-----------|----------|---------:|    
+|Not Cancelled |    0.88   |   0.92   |   0.90   |
+|Cancelled     |    0.85   |   0.78   |   0.81   |
+|              | accuracy  |   87%    |          |      
 
-Not Cancelled     0.88      0.92      0.90
-Cancelled         0.85      0.78      0.81
 
-Accuracy                        0.87
-```
 
----
+# Web Application
 
-# 🌐 Web Application
-
-The project includes a complete web application built using:
+The project includes an interactive web application built with:
 
 - FastAPI
 - HTML
 - CSS
 - JavaScript
 
-Users can enter booking information through the web interface and receive an instant prediction.
+Users can enter booking information through a web interface and instantly receive:
 
----
+- Cancellation prediction
+- Cancellation probability
+- Non-cancellation probability
 
-# 🔌 API
+<p align="center">
+  <img src="images/image_1.png" width="900">
+</p>
+
+The web interface communicates with the FastAPI backend, which preprocesses the input data and generates predictions using the trained XGBoost model in real time.
+
+# API
 
 Endpoint
 
 ```
-POST /predict
+POST/predict
 ```
 
 Example Request
@@ -257,9 +136,7 @@ Example Response
 }
 ```
 
----
-
-# 💻 Installation
+# Installation
 
 Clone the repository
 
@@ -291,9 +168,7 @@ Open
 http://127.0.0.1:8000
 ```
 
----
-
-# 🛠 Technologies
+# Technologies
 
 - Python
 - Pandas
@@ -306,35 +181,16 @@ http://127.0.0.1:8000
 - CSS
 - JavaScript
 
----
 
-# 🔮 Future Improvements
+# Future Improvements
 
-- Deploy on Render
-- Docker Support
-- SHAP Explainability
-- Responsive UI Improvements
-- Model Monitoring
-- Feature Importance Visualization
-- Automatic Data Validation
-
----
-
-# 👨‍💻 Author
-
-**Amin Amini**
-
-Computer Engineering Student
-
-Interested in:
-
-- Artificial Intelligence
-- Machine Learning
-- Computer Vision
-- Large Language Models
-
-GitHub:
-
-```
-https://github.com/aminaminimh/HOTEL_BOOKING.git
-```
+- [ ] Deploy the application on Render
+- [ ] Add Docker support
+- [ ] Integrate SHAP for model explainability
+- [ ] Improve the responsive user interface
+- [ ] Implement model monitoring
+- [ ] Visualize feature importance
+- [ ] Add automatic data validation
+- [ ] Support batch prediction using CSV files
+- [ ] Add user authentication
+- [ ] Train and compare additional ML models
