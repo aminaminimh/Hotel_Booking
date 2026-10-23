@@ -1,5 +1,8 @@
 site_name: Hotel Booking Cancellation Prediction
 site_description: Machine Learning documentation for the Hotel Booking Cancellation Prediction project
+site_url: https://aminaminimh.github.io/HOTEL_BOOKING/
+repo_url: https://github.com/aminaminimh/HOTEL_BOOKING
+repo_name: aminaminimh/HOTEL_BOOKING
 
 theme:
   name: material
