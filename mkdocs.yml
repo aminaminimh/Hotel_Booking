@@ -1,0 +1,23 @@
+site_name: Hotel Booking Cancellation Prediction
+site_description: Machine Learning documentation for the Hotel Booking Cancellation Prediction project
+
+theme:
+  name: material
+
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+
+nav:
+  - Home: index.md
+  - Machine Learning:
+      - Preprocessing: preprocessing.md
+      - Training: training.md
+  - API:
+      - API Documentation: api.md
+  - Deployment:
+      - Deployment: deployment.md
